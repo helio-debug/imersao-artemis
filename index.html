@@ -244,7 +244,7 @@ section{padding:110px 0}
 .scarcity .dot.taken{background:#fff;color:var(--ink);border:0}
 .scarcity .txt{font-size:16px;color:#E4E0DA}
 .scarcity .txt b{color:#fff;font-family:var(--display)}
-.plans{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .plan{background:var(--dark-2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:34px 32px;display:flex;flex-direction:column}
 .plan.hl{background:#fff;color:var(--text);border-color:#fff}
 .plan .pn{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--wood-soft)}
@@ -294,6 +294,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--ink)}
 .field .msg{display:none;font-size:13px;color:#B84015;margin-top:5px}
 .field.err .msg{display:block}
 .opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opts.o3{grid-template-columns:repeat(3,1fr)}
 .opt{position:relative}
 .opt input{position:absolute;opacity:0;pointer-events:none}
 .opt span{display:block;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;font-size:15px;line-height:1.3;cursor:pointer;transition:all .15s}
@@ -406,7 +407,7 @@ footer img{height:24px}
     <div class="facts">
       <div class="fact"><div class="k">Duração</div><div class="v">6 horas, presencial</div></div>
       <div class="fact"><div class="k">Local</div><div class="v">Estreito, Florianópolis</div></div>
-      <div class="fact"><div class="k">Formato</div><div class="v">Individual ou empresa</div></div>
+      <div class="fact"><div class="k">Formato</div><div class="v">Individual, empresa ou departamento</div></div>
       <div class="fact"><div class="k">Vagas</div><div class="v">2 por mês</div></div>
     </div>
   </div>
@@ -688,7 +689,7 @@ footer img{height:24px}
         <h2>Beira-mar do Estreito, Florianópolis</h2>
         <p>O escritório fica de frente para o mar, na Beira-mar do Estreito.</p>
         <ul>
-          <li>Almoço incluso</li>
+          <li>Almoço de networking incluso</li>
           <li>Sala de reunião com quadros, só para você</li>
           <li>Se você vem de outro estado, indicamos onde ficar</li>
         </ul>
@@ -750,7 +751,7 @@ footer img{height:24px}
         <div class="inst">ou em até 【N】x no cartão</div>
         <ul>
           <li>6 horas presenciais com o time</li>
-          <li>Almoço incluso</li>
+          <li>Almoço de networking incluso</li>
           <li>O que for construído, instalado no seu computador</li>
           <li>Plano de 30 dias por escrito</li>
           <li>30 dias de WhatsApp com o time</li>
@@ -770,6 +771,20 @@ footer img{height:24px}
           <li>Valor abatido de um projeto de implementação da Artemis</li>
         </ul>
         <a class="btn" href="#requisicao" data-formato="Empresa">Requisitar vaga para empresa</a>
+      </div>
+      <div class="plan">
+        <div class="pn">Enterprise</div>
+        <h3>Departamento de até 20 pessoas</h3>
+        <div class="whop">Para a área inteira aprender a operar com IA</div>
+        <div class="price">R$ 80.000</div>
+        <div class="inst">condições de pagamento combinadas na proposta</div>
+        <ul>
+          <li>Tudo do formato empresa, para até 20 pessoas do mesmo departamento</li>
+          <li>Dia montado em torno dos processos da área</li>
+          <li>Mapa por escrito do que dá para automatizar em cada função</li>
+          <li>30 dias de WhatsApp com o time para o departamento</li>
+        </ul>
+        <a class="btn line" href="#requisicao" data-formato="Enterprise">Requisitar vaga enterprise</a>
       </div>
     </div>
     <p class="fine">Nenhum pagamento agora. O pagamento só acontece depois que a vaga é liberada.</p>
@@ -823,9 +838,10 @@ footer img{height:24px}
             </select><div class="msg">Selecione uma faixa.</div></div>
         </div>
         <div class="field" data-group="formato"><span class="lab">Formato</span>
-          <div class="opts">
+          <div class="opts o3">
             <label class="opt"><input type="radio" name="formato" value="Individual"><span><b>Individual</b>uma pessoa</span></label>
             <label class="opt"><input type="radio" name="formato" value="Empresa"><span><b>Empresa</b>até 4 pessoas</span></label>
+            <label class="opt"><input type="radio" name="formato" value="Enterprise"><span><b>Enterprise</b>até 20 pessoas</span></label>
           </div><div class="msg">Escolha o formato.</div></div>
         <div class="field" data-group="area"><span class="lab">Qual área mais precisa de ajuda</span>
           <div class="opts">

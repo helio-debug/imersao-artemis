@@ -1,0 +1,905 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WW4JRN7');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Imersão Particular de IA · Artemis · Florianópolis</title>
+<meta name="description" content="Um dia dentro de uma empresa de IA, com o time dela sentado do seu lado. Imersão particular na beira-mar do Estreito, em Florianópolis. 2 vagas por mês.">
+<meta property="og:title" content="Imersão Particular de IA · Artemis">
+<meta property="og:description" content="Um dia dentro de uma empresa de IA, com o time dela sentado do seu lado. 2 vagas por mês.">
+<meta property="og:image" content="assets/f/hero.jpg">
+<style>
+@font-face{font-family:"Exo";font-weight:400 700;font-display:swap;src:url(assets/fonts/exo.woff2) format("woff2")}
+@font-face{font-family:"Cabin";font-weight:400 700;font-display:swap;src:url(assets/fonts/cabin.woff2) format("woff2")}
+@font-face{font-family:"Instrument Serif";font-style:italic;font-display:swap;src:url(assets/fonts/instrument-serif-italic.woff2) format("woff2")}
+
+/* paleta tirada das fotos do escritório: preto das roupas, madeira da mesa, pedra e luz de janela */
+:root{
+  --ink:#141518;
+  --text:#3A3836;
+  --muted:#7A726B;
+  --line:#E4E0DA;
+  --bg:#FFFFFF;
+  --stone:#F3F1ED;
+  --stone-2:#E9E5DF;
+  --wood:#6E5A4E;
+  --wood-soft:#9D9084;
+  --dark:#141518;
+  --dark-2:#1E1F22;
+  --display:"Exo",system-ui,sans-serif;
+  --body:"Cabin",system-ui,sans-serif;
+  --serif:"Instrument Serif",Georgia,serif;
+  --r:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);color:var(--ink);line-height:1.08;letter-spacing:-.025em;font-weight:700}
+h1{font-size:clamp(40px,6vw,76px)}
+h2{font-size:clamp(30px,4vw,50px)}
+h3{font-size:22px;letter-spacing:-.01em;line-height:1.2}
+.ed{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em;color:var(--wood)}
+.tag{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--wood)}
+section{padding:110px 0}
+.sec-head{margin-bottom:52px;max-width:780px}
+.sec-head h2{margin-top:14px}
+.sec-head p{margin-top:18px;font-size:19px;max-width:640px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--ink);color:#fff;font-family:var(--body);font-weight:700;font-size:18px;padding:19px 32px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{background:#000;transform:translateY(-1px)}
+.btn .arr{font-size:20px;line-height:1}
+.btn.light{background:#fff;color:var(--ink)}
+.btn.light:hover{background:var(--stone)}
+.btn.line{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3)}
+.btn.line:hover{border-color:#fff}
+
+/* topo */
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+.top img{height:28px;width:auto}
+.top .right{display:flex;align-items:center;gap:20px}
+.top .vagas-mini{font-size:14px;color:var(--muted)}
+.top .vagas-mini::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#2E8B57;margin-right:8px;vertical-align:1px}
+.top .btn{padding:11px 20px;font-size:15px}
+
+/* hero */
+.hero{padding:70px 0 0}
+.hero-top{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:end}
+.hero h1{margin-top:18px}
+.hero .side p{font-size:19px}
+.hero .side .btn{margin-top:26px}
+.hero .micro{margin-top:14px;font-size:15px;color:var(--muted)}
+.hero-photo{margin-top:56px;position:relative;border-radius:24px;overflow:hidden}
+.hero-photo img{width:100%;aspect-ratio:16/8.2;object-fit:cover;object-position:center 45%}
+.hero-photo .cap{position:absolute;left:20px;bottom:20px;background:rgba(20,21,24,.72);backdrop-filter:blur(6px);color:#fff;border-radius:12px;padding:10px 14px;font-size:14px;line-height:1.35}
+.hero-photo .cap b{display:block;font-family:var(--display)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-bottom:1px solid var(--line)}
+.fact{padding:26px 24px 28px 0}
+.fact+.fact{padding-left:24px;border-left:1px solid var(--line)}
+.fact .k{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.fact .v{font-family:var(--display);font-weight:700;color:var(--ink);font-size:23px;margin-top:6px;line-height:1.2}
+
+/* logos */
+.logos{padding:54px 0 10px}
+.logos p{font-size:13px;color:var(--muted);text-align:center;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.logo-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:26px 56px;margin-top:30px}
+.logo-row img{height:30px;width:auto;filter:grayscale(1) brightness(.35);opacity:.8;transition:opacity .2s}
+.logo-row img:hover{opacity:1}
+.logo-row .tall{height:40px}
+.logo-row .plug{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:22px;color:#3A3836;opacity:.8;letter-spacing:.02em}
+.logo-row .plug img{height:28px}
+
+/* o que é */
+.what{display:grid;grid-template-columns:1fr 1.05fr;gap:64px;align-items:center}
+.what p{font-size:19px}
+.what p+p{margin-top:18px}
+.what strong{color:var(--ink)}
+.mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:14px}
+.mosaic img{width:100%;height:100%;object-fit:cover;border-radius:var(--r)}
+.mosaic .m1{grid-row:span 2;aspect-ratio:auto}
+.mosaic .m2,.mosaic .m3{aspect-ratio:1/1}
+
+/* passos */
+.steps-sec{background:var(--stone)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step{background:#fff;border-radius:var(--r);padding:32px 30px 34px}
+.step .n{font-family:var(--serif);font-style:italic;font-size:56px;line-height:1;color:var(--wood)}
+.step h3{margin-top:14px}
+.step p{margin-top:10px;font-size:17px}
+
+/* o dia */
+.day{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.day-card img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:var(--r)}
+.day-card h3{margin-top:22px}
+.day-card p{margin-top:8px;font-size:17px}
+.who{margin-top:44px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.who div{padding:20px 20px 20px 0;font-size:15px;line-height:1.4}
+.who div+div{padding-left:20px;border-left:1px solid var(--line)}
+.who b{display:block;font-family:var(--display);color:var(--ink);font-size:18px;margin-bottom:3px}
+.who span{color:var(--muted)}
+.take{margin-top:22px;background:var(--dark);color:#CFCBC6;border-radius:var(--r);padding:36px 38px;display:grid;grid-template-columns:.75fr 1.6fr;gap:32px;align-items:start}
+.take h3{color:#fff;font-size:26px}
+.take ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:16px 32px}
+.take li{padding-left:28px;position:relative;font-size:16.5px;line-height:1.45}
+.take li b{color:#fff}
+.take li::before{content:"";position:absolute;left:0;top:9px;width:14px;height:2px;background:var(--wood-soft)}
+
+/* em ação */
+.acao-sec{background:var(--dark);color:#CFCBC6}
+.acao-sec h2{color:#fff}
+.acao-sec .tag{color:var(--wood-soft)}
+.acao-sec .sec-head p{color:#B8B2AB}
+.gal{display:grid;grid-template-columns:1.5fr 1fr 1fr;grid-template-rows:260px 260px;gap:12px}
+.gal img{width:100%;height:100%;object-fit:cover;border-radius:14px}
+.gal .g1{grid-row:span 2}
+.reels-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin:64px 0 22px;flex-wrap:wrap}
+.reels-head h3{color:#fff;font-size:26px}
+.reels-head a{color:#CFCBC6;font-size:15px;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+.reels{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.reel{position:relative;display:block;border-radius:14px;overflow:hidden;text-decoration:none;aspect-ratio:9/16;background:#000}
+.reel img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.reel:hover img{transform:scale(1.04)}
+.reel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.85) 100%)}
+.reel .play{position:absolute;top:12px;right:12px;z-index:2;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.9);display:grid;place-items:center}
+.reel .play svg{width:13px;height:13px;margin-left:2px}
+.reel span{position:absolute;left:14px;right:14px;bottom:14px;z-index:2;color:#fff;font-size:14px;line-height:1.35;font-weight:600}
+
+/* cases */
+.cases{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.case{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;background:#fff}
+.case .ph{position:relative;aspect-ratio:16/7;overflow:hidden;background:var(--stone)}
+.case .ph img{width:100%;height:100%;object-fit:cover}
+.case .ph .lg{position:absolute;left:18px;top:18px;background:#fff;border-radius:10px;padding:8px 12px;display:flex;align-items:center}
+.case .ph .lg img{height:22px;width:auto;object-fit:contain}
+.case .bd{padding:26px 30px 30px;display:flex;flex-direction:column;flex:1}
+.case .seg{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.case .big{font-family:var(--display);font-weight:700;color:var(--ink);font-size:clamp(38px,4.2vw,54px);line-height:1;letter-spacing:-.035em;margin:12px 0 6px}
+.case .big small{font-size:.44em;letter-spacing:-.01em;color:var(--wood)}
+.case .bl{font-family:var(--display);font-weight:600;color:var(--ink);font-size:17px}
+.case p{margin-top:12px;font-size:16px}
+.case blockquote{margin-top:16px;font-family:var(--serif);font-style:italic;font-size:23px;line-height:1.28;color:var(--ink)}
+.case blockquote cite{display:block;font-family:var(--body);font-style:normal;font-size:14px;color:var(--muted);margin-top:6px}
+.case .person{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:20px;font-size:14px;line-height:1.35}
+.case .person img{width:42px;height:42px;border-radius:50%;object-fit:cover}
+.case .person b{display:block;color:var(--ink)}
+.also{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:15px}
+.also .lbl{color:var(--muted);margin-right:4px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-weight:600;color:var(--ink);display:inline-flex;align-items:center;gap:8px}
+.chip img{width:22px;height:22px;border-radius:50%;object-fit:cover}
+
+/* ferramentas */
+.tools-sec{background:var(--stone)}
+.tools{display:grid;grid-template-columns:1.2fr 1fr;grid-template-rows:auto auto;gap:18px}
+.tool{background:var(--dark);border-radius:22px;overflow:hidden;color:#CFCBC6;display:flex;flex-direction:column}
+.tool.t1{grid-row:span 2}
+.tool .shot{background:#fff;overflow:hidden;position:relative}
+.tool.t1 .shot{flex:1;min-height:340px;background:#E9E5DF;display:flex;align-items:flex-start;justify-content:center;padding:40px 40px 0;overflow:hidden}
+.tool.t1 .shot img{width:78%;border-radius:14px 14px 0 0;box-shadow:0 30px 60px rgba(0,0,0,.22)}
+.tool.t2 .shot img{width:100%;aspect-ratio:2/1;object-fit:cover;object-position:left top}
+.tool.t3 .shot img{width:100%;aspect-ratio:2/1;object-fit:cover;object-position:center 35%}
+.tool .bd{padding:28px 30px 30px}
+.tool .kick{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--wood-soft)}
+.tool h3{color:#fff;font-size:30px;margin-top:6px}
+.tool p{margin-top:10px;font-size:16.5px;max-width:520px}
+.tool .stat{margin-top:18px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.12);padding-top:16px}
+.tool .stat b{font-family:var(--display);font-size:26px;color:#fff;letter-spacing:-.02em}
+.tool .stat span{font-size:14.5px;color:#9A938C}
+
+/* time */
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.member img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r);filter:saturate(.9)}
+.member .area{margin-top:16px;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--wood)}
+.member h3{margin-top:4px}
+.member p{margin-top:6px;font-size:15.5px;line-height:1.5}
+.team-note{margin-top:40px;display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center;background:var(--stone);border-radius:22px;overflow:hidden}
+.team-note img{width:100%;height:100%;object-fit:cover;min-height:280px}
+.team-note div{padding:36px 40px 36px 0}
+.team-note p{font-family:var(--serif);font-style:italic;font-size:30px;line-height:1.22;color:var(--ink)}
+.team-note small{display:block;margin-top:14px;font-size:15px;color:var(--muted)}
+
+/* onde */
+.where{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
+.where .txt{background:var(--dark);color:#CFCBC6;border-radius:22px;padding:48px 44px;display:flex;flex-direction:column;justify-content:flex-end}
+.where .txt .tag{color:var(--wood-soft)}
+.where .txt h2{color:#fff;margin-top:12px}
+.where .txt p{margin-top:16px;font-size:18px}
+.where .txt ul{list-style:none;margin-top:24px;display:grid;gap:10px;font-size:16px}
+.where .txt li{padding-left:24px;position:relative}
+.where .txt li::before{content:"";position:absolute;left:0;top:11px;width:12px;height:2px;background:var(--wood-soft)}
+.where .pics{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.where .pics img{width:100%;height:100%;object-fit:cover;border-radius:22px;min-height:420px}
+
+/* critérios */
+.crit{display:grid;grid-template-columns:1.3fr 1fr;gap:18px}
+.crit-box{border:1px solid var(--line);border-radius:var(--r);padding:32px}
+.crit-box h3{font-size:20px;margin-bottom:18px}
+.crit-box ul{list-style:none;display:grid;gap:14px}
+.crit-box li{padding-left:32px;position:relative;font-size:17px;line-height:1.45}
+.crit-box li::before{position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;color:#fff}
+.crit-box.yes li::before{content:"✓";background:var(--ink)}
+.crit-box.no{background:var(--stone);border-color:var(--stone)}
+.crit-box.no li::before{content:"–";background:var(--wood-soft)}
+
+/* oferta */
+.offer{background:var(--dark);color:#CFCBC6}
+.offer h2{color:#fff}
+.offer .tag{color:var(--wood-soft)}
+.offer .sec-head p{color:#B8B2AB}
+.scarcity{display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:var(--dark-2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:20px 24px;margin-bottom:18px}
+.scarcity .dots{display:flex;gap:8px}
+.scarcity .dot{width:44px;height:44px;border-radius:12px;border:1.5px dashed rgba(255,255,255,.3);display:grid;place-items:center;font-family:var(--display);font-weight:700;color:#fff;font-size:15px}
+.scarcity .dot.taken{background:#fff;color:var(--ink);border:0}
+.scarcity .txt{font-size:16px;color:#E4E0DA}
+.scarcity .txt b{color:#fff;font-family:var(--display)}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.plan{background:var(--dark-2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:34px 32px;display:flex;flex-direction:column}
+.plan.hl{background:#fff;color:var(--text);border-color:#fff}
+.plan .pn{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--wood-soft)}
+.plan.hl .pn{color:var(--wood)}
+.plan h3{color:#fff;font-size:25px;margin-top:8px}
+.plan.hl h3{color:var(--ink)}
+.plan .whop{font-size:15px;color:#9A938C;margin-top:4px}
+.plan.hl .whop{color:var(--muted)}
+.plan .price{font-family:var(--display);font-weight:700;color:#fff;font-size:48px;letter-spacing:-.035em;margin:24px 0 4px;line-height:1}
+.plan.hl .price{color:var(--ink)}
+.plan .inst{font-size:14px;color:#9A938C}
+.plan.hl .inst{color:var(--muted)}
+.plan ul{list-style:none;margin:24px 0 28px;display:grid;gap:11px}
+.plan li{padding-left:26px;position:relative;font-size:15.5px;line-height:1.45;color:#E4E0DA}
+.plan.hl li{color:var(--text)}
+.plan li::before{content:"✓";position:absolute;left:0;top:0;font-weight:700;color:var(--wood-soft)}
+.plan.hl li::before{color:var(--wood)}
+.plan .btn{margin-top:auto;width:100%}
+.offer .fine{margin-top:18px;font-size:14px;color:#9A938C;text-align:center}
+
+/* faq */
+.faq{max-width:840px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:24px 44px 24px 0;font-family:var(--display);font-weight:600;font-size:20px;color:var(--ink);position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:19px;font-size:28px;font-weight:400;color:var(--wood);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 24px;font-size:17px;max-width:720px}
+
+/* formulário */
+.form-sec{background:var(--stone)}
+.form-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:52px;align-items:start}
+.form-side p{margin-top:16px;font-size:18px}
+.form-side img{margin-top:30px;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+.mini{margin-top:26px;display:grid;gap:14px}
+.mini div{display:flex;gap:14px;align-items:flex-start;font-size:16px;line-height:1.45}
+.mini b{flex:none;font-family:var(--serif);font-style:italic;font-weight:400;font-size:26px;line-height:.9;color:var(--wood);width:22px}
+form{background:#fff;border-radius:24px;padding:36px 34px;box-shadow:0 24px 60px rgba(20,21,24,.07)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{margin-bottom:18px}
+.field label,.field .lab{display:block;font-weight:700;font-size:15px;color:var(--ink);margin-bottom:7px}
+.field label small{font-weight:400;color:var(--muted)}
+input,select,textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:13px 14px;outline:none;transition:border-color .15s}
+textarea{min-height:92px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:var(--ink)}
+.field.err input,.field.err select,.field.err textarea,.field.err .opt span{border-color:#B84015}
+.field .msg{display:none;font-size:13px;color:#B84015;margin-top:5px}
+.field.err .msg{display:block}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt span{display:block;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;font-size:15px;line-height:1.3;cursor:pointer;transition:all .15s}
+.opt span b{display:block;color:var(--ink);font-size:15.5px}
+.opt input:checked+span{border-color:var(--ink);background:var(--stone)}
+.opt input:focus-visible+span{outline:2px solid var(--ink);outline-offset:2px}
+form .btn{width:100%;margin-top:6px}
+form .fine{margin-top:12px;font-size:13.5px;color:var(--muted);text-align:center}
+
+footer{padding:40px 0;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer img{height:24px}
+
+.sticky{display:none}
+
+@media (max-width:980px){
+  section{padding:80px 0}
+  .hero-top,.what,.form-grid,.take,.where,.team-note{grid-template-columns:1fr}
+  .hero-top{gap:24px}
+  .facts{grid-template-columns:1fr 1fr}
+  .fact:nth-child(3){padding-left:0;border-left:0}
+  .fact:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .steps,.cases,.day,.plans,.crit{grid-template-columns:1fr}
+  .tools{grid-template-columns:1fr}
+  .tool.t1{grid-row:auto}
+  .who{grid-template-columns:1fr 1fr}
+  .who div:nth-child(3){padding-left:0;border-left:0}
+  .who div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .take ul{grid-template-columns:1fr}
+  .team{grid-template-columns:1fr 1fr}
+  .gal{grid-template-columns:1fr 1fr;grid-template-rows:220px 180px 180px}
+  .gal .g1{grid-column:span 2;grid-row:auto}
+  .reels{grid-template-columns:repeat(5,62%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
+  .reel{scroll-snap-align:start}
+  .team-note div{padding:0 28px 32px}
+  .team-note p{font-size:25px}
+  .where .pics img{min-height:300px}
+  .top .vagas-mini{display:none}
+}
+@media (max-width:620px){
+  body{font-size:17px}
+  .wrap{padding:0 16px}
+  .hero{padding-top:36px}
+  .hero-photo{margin-top:32px;border-radius:18px}
+  .hero-photo img{aspect-ratio:4/3.4}
+  .top .btn{display:none}
+  .fact{padding:18px 14px 18px 0}
+  .fact+.fact{padding-left:14px}
+  .fact .v{font-size:18px}
+  .logo-row{gap:22px 34px}
+  .logo-row img{height:24px}
+  .logo-row .tall{height:32px}
+  .mosaic{grid-template-columns:1fr 1fr}
+  .row,.opts{grid-template-columns:1fr}
+  .team{gap:14px}
+  .member p{font-size:14.5px}
+  form{padding:26px 20px}
+  .take{padding:28px 22px}
+  .where .txt{padding:34px 24px}
+  .where .pics{grid-template-columns:1fr 1fr;gap:10px}
+  .where .pics img{min-height:240px;border-radius:16px}
+  .tool .bd{padding:24px 22px 26px}
+  .tool.t1 .shot{min-height:0;padding:18px}
+  .sticky{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom));gap:12px;align-items:center;justify-content:space-between;transform:translateY(110%);transition:transform .25s}
+  .sticky:not(.on){visibility:hidden}
+  .sticky.on{transform:none}
+  .sticky span{font-size:13.5px;line-height:1.3;color:var(--muted)}
+  .sticky span b{color:var(--ink);display:block;font-size:15px}
+  .sticky .btn{padding:13px 20px;font-size:15px;flex:none}
+}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WW4JRN7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header class="top">
+  <div class="wrap">
+    <img src="assets/artemis-lockup-dark.svg" alt="Artemis">
+    <div class="right">
+      <span class="vagas-mini" data-vagas-mini>2 vagas por mês</span>
+      <a class="btn" href="#requisicao">Requisitar vaga</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <div>
+        <span class="tag">Imersão particular de IA · Florianópolis</span>
+        <h1>Um dia dentro de uma empresa de IA, com o time dela <span class="ed">sentado do seu lado</span></h1>
+      </div>
+      <div class="side">
+        <p>A Artemis é um grupo de empresas de tecnologia com mais de 25 pessoas. Por seis horas, a operação, a sala de reunião e os quadros ficam à disposição do seu negócio, e a pauta sai da requisição que você preenche antes.</p>
+        <a class="btn" href="#requisicao">Preencher a requisição <span class="arr">→</span></a>
+        <div class="micro" data-vagas-hero>2 vagas por mês, liberadas para quem atende aos critérios.</div>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="assets/f/hero.jpg" alt="Time da Artemis em reunião na sala do escritório, com a baía ao fundo">
+      <div class="cap"><b>Sala de reunião da Artemis</b>Beira-mar do Estreito, Florianópolis</div>
+    </div>
+    <div class="facts">
+      <div class="fact"><div class="k">Duração</div><div class="v">6 horas, presencial</div></div>
+      <div class="fact"><div class="k">Local</div><div class="v">Estreito, Florianópolis</div></div>
+      <div class="fact"><div class="k">Formato</div><div class="v">Individual ou empresa</div></div>
+      <div class="fact"><div class="k">Vagas</div><div class="v">2 por mês</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<div class="logos">
+  <div class="wrap">
+    <p>Empresas que já trabalham com o time</p>
+    <div class="logo-row">
+      <img src="assets/logos/athie.svg" alt="Athie Wohnrath">
+      <img src="assets/logos/gascat.png" alt="Gascat" class="tall">
+      <img src="assets/logos/orsegups.svg" alt="Orsegups" class="tall">
+      <img src="assets/logos/marine.svg" alt="Marine Telematics">
+      <img src="assets/logos/plusiot-dark.png" alt="Plus IoT">
+      <img src="assets/logos/next-dark.png" alt="Next Shipping" class="tall">
+      <span class="plug"><img src="assets/logos/plugue-dark.png" alt="">Plugue</span>
+    </div>
+  </div>
+</div>
+
+<!-- O QUE É -->
+<section>
+  <div class="wrap">
+    <div class="what">
+      <div>
+        <span class="tag">O que é</span>
+        <h2 style="margin:14px 0 26px">Você entra na operação e senta com quem faz</h2>
+        <p>A Artemis roda com time híbrido: parte da equipe fica no escritório de frente para o mar, no Estreito, e parte trabalha remota na mesma operação. Dali saem os sistemas de IA de uma incorporadora com 1.500 funcionários, de uma fábrica de válvulas com 30 anos de mercado e a operação de marketing e de SEO de dezenas de empresas.</p>
+        <p>Na imersão você passa o dia dentro disso. <strong>Senta lado a lado no computador com quem constrói</strong>, vê as ferramentas abertas e rodando, e leva o seu negócio para a sala de reunião, onde desenhamos nos quadros a estratégia, as automações, os processos e a ordem do que fazer primeiro.</p>
+        <p>Não existe roteiro fixo. Um dono de clínica e um diretor industrial saem daqui com dias completamente diferentes, porque cada um chegou com uma requisição diferente.</p>
+      </div>
+      <div class="mosaic">
+        <img class="m1" src="assets/f/conversa.jpg" alt="Dois integrantes do time conversando na mesa de reunião">
+        <img class="m2" src="assets/f/codigo.jpg" alt="Tela com código em execução">
+        <img class="m3" src="assets/f/fone.jpg" alt="Integrante do time trabalhando de fone">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="steps-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Como funciona</span>
+      <h2>Três passos até a sua data</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Você preenche a requisição</h3><p>Conta quem é, o que a sua empresa faz e o que quer resolver. Leva uns cinco minutos.</p></div>
+      <div class="step"><div class="n">2</div><h3>A gente avalia</h3><p>Se a sua necessidade cabe no que o time sabe fazer e você atende aos critérios, a vaga é sua. Se não couber, dizemos por quê.</p></div>
+      <div class="step"><div class="n">3</div><h3>O dia é montado para você</h3><p>O time define quem estará na sala, em que ordem e com qual material. Você chega e a pauta já está no quadro.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- O DIA -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">O dia</span>
+      <h2>Seis horas entre o computador e a sala de reunião</h2>
+    </div>
+    <div class="day">
+      <div class="day-card">
+        <img src="assets/f/lado.jpg" alt="Trabalho no notebook durante a imersão">
+        <h3>Lado a lado no computador</h3>
+        <p>Você trabalha na sua máquina, com alguém do time do lado. A memória do seu negócio, as primeiras skills, uma automação, um fluxo de conteúdo: o que for construído sai instalado e testado com material real da sua empresa.</p>
+      </div>
+      <div class="day-card">
+        <img src="assets/f/sala.jpg" alt="Sala de reunião da Artemis com o time">
+        <h3>Na sala, com os quadros</h3>
+        <p>É onde desenhamos o que não cabe na tela: o mapa dos processos, onde está o custo, o que automatizar primeiro, como vender, como aparecer no Google e nas respostas de IA.</p>
+      </div>
+    </div>
+    <div class="who">
+      <div><b>Venda</b><span>entra o Enzo</span></div>
+      <div><b>Fábrica e operação</b><span>entra o Willy</span></div>
+      <div><b>Código e sistema</b><span>entra o Julio</span></div>
+      <div><b>Marketing e copy</b><span>entra o Hélio</span></div>
+    </div>
+    <div class="take">
+      <h3>O que você leva para casa</h3>
+      <ul>
+        <li><b>O que foi construído</b>, instalado e funcionando no seu computador</li>
+        <li><b>As fotos dos quadros</b> com o plano desenhado</li>
+        <li><b>Um plano por escrito</b> para os 30 dias seguintes</li>
+        <li><b>30 dias de WhatsApp</b> com o time para destravar o que emperrar</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EM AÇÃO -->
+<section class="acao-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Por dentro</span>
+      <h2>É assim que o time trabalha</h2>
+      <p>Mesa cheia, notebook aberto e processo real na tela. Na imersão, a diferença é que o processo na tela é o seu.</p>
+    </div>
+    <div class="gal">
+      <img class="g1" src="assets/f/acao1.jpg" alt="Time da Artemis reunido com um cliente numa mesa de trabalho">
+      <img src="assets/f/maos.jpg" alt="Mãos no notebook com código aberto">
+      <img src="assets/f/acao3.jpg" alt="Hélio e integrantes do time na mesa">
+      <img src="assets/f/acao2.jpg" alt="Sala de reunião com o time e o cliente">
+      <img src="assets/f/acao4.jpg" alt="Time caminhando pelo corredor de uma operação">
+    </div>
+
+    <div class="reels-head">
+      <h3>Veja nos nossos reels</h3>
+      <a href="https://www.instagram.com/studioartemis.co/" target="_blank" rel="noopener">Ver mais no Instagram →</a>
+    </div>
+    <div class="reels">
+      <a class="reel" href="https://www.instagram.com/reel/DcuBQNIBcGf/" target="_blank" rel="noopener"><img src="assets/f/reel-gascat-agenda.jpg" alt=""><i class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z" fill="#141518"/></svg></i><span>Uma fábrica de válvulas parou a agenda para construir IA dentro de casa</span></a>
+      <a class="reel" href="https://www.instagram.com/reel/DVPQ7-rARu_/" target="_blank" rel="noopener"><img src="assets/f/reel-construtora.jpg" alt=""><i class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z" fill="#141518"/></svg></i><span>R$ 40 mil por mês em conferência de documentos, automatizados</span></a>
+      <a class="reel" href="https://www.instagram.com/reel/DdHSZdchhbT/" target="_blank" rel="noopener"><img src="assets/f/reel-imersos.jpg" alt=""><i class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z" fill="#141518"/></svg></i><span>Semanas imersos com o time antes de pensar no sistema</span></a>
+      <a class="reel" href="https://www.instagram.com/reel/DcjAMntgy9r/" target="_blank" rel="noopener"><img src="assets/f/reel-imersao-mkt.jpg" alt=""><i class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z" fill="#141518"/></svg></i><span>Fim de uma imersão de IA aplicada ao marketing</span></a>
+      <a class="reel" href="https://www.instagram.com/reel/Dax2FcVALTV/" target="_blank" rel="noopener"><img src="assets/f/reel-ora.jpg" alt=""><i class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z" fill="#141518"/></svg></i><span>A Artemis parou alguns dias para planejar com a ORA</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Cases</span>
+      <h2>O que esse time já colocou para rodar</h2>
+    </div>
+    <div class="cases">
+      <article class="case">
+        <div class="ph"><img src="assets/f/case-athie.jpg" alt="Obra da Athie Wohnrath"><div class="lg"><img src="assets/logos/athie.svg" alt="Athie Wohnrath"></div></div>
+        <div class="bd">
+          <div class="seg">Incorporadora</div>
+          <div class="big">R$ 40 mil<small> por mês</small></div>
+          <div class="bl">economizados na conferência de documentos</div>
+          <p>A maior incorporadora de prédios corporativos da América Latina transformou a conferência de olerite e cartão de ponto dos terceirizados em sistema. O levantamento de quantitativo de planta, que tomava 3 horas de um engenheiro, caiu para 25 minutos.</p>
+        </div>
+      </article>
+      <article class="case">
+        <div class="ph"><img src="assets/f/case-gascat.jpg" alt="Willy na fábrica da Gascat" style="object-position:center 30%"><div class="lg"><img src="assets/logos/gascat.png" alt="Gascat"></div></div>
+        <div class="bd">
+          <div class="seg">Indústria de válvulas</div>
+          <div class="big">70%<small> em 1 dia</small></div>
+          <div class="bl">de acerto na codificação de produto</div>
+          <p>Fábrica com mais de 30 anos. Num único dia presencial, o sistema chegou a 70% de acerto numa família de válvulas.</p>
+          <blockquote>“Isso aqui está tomando mais decisão do que a nossa engenharia.”<cite>Celso, dono da Gascat</cite></blockquote>
+        </div>
+      </article>
+      <article class="case">
+        <div class="ph"><img src="assets/f/case-souza.jpg" alt="Reels produzidos para o escritório Souza" style="object-position:left center"></div>
+        <div class="bd">
+          <div class="seg">Escritório de direito bancário</div>
+          <div class="big">327 → 11.792</div>
+          <div class="bl">cliques orgânicos no Google</div>
+          <p>Escritório no interior de Minas, com 5 mil processos. O site passou a aparecer em 258 mil respostas de IA do Google.</p>
+          <div class="person"><span><b>Tallisson Souza</b>Souza Advogados</span></div>
+        </div>
+      </article>
+      <article class="case">
+        <div class="ph"><img src="assets/f/case-marine.jpg" alt="Jairo de Abreu na fábrica da Marine Telematics" style="object-position:center 35%"><div class="lg"><img src="assets/logos/marine.svg" alt="Marine Telematics"></div></div>
+        <div class="bd">
+          <div class="seg">Tecnologia náutica</div>
+          <div class="big">Vizinha<small> de prédio</small></div>
+          <div class="bl">marketing e comercial rodando sobre o método da casa</div>
+          <p>Fabricante brasileira de comandos eletrônicos com telemetria para embarcações. O conteúdo, os anúncios e o atendimento comercial rodam sobre o método da Artemis.</p>
+          <div class="person"><img src="assets/f/jairo.jpg" alt="Jairo de Abreu"><span><b>Jairo de Abreu</b>Fundador e CEO</span></div>
+        </div>
+      </article>
+    </div>
+    <div class="also">
+      <span class="lbl">Também confiam no time:</span>
+      <span class="chip">Orsegups</span><span class="chip">Plus IoT</span><span class="chip">Next Shipping</span><span class="chip">Plugue</span>
+      <span class="chip"><img src="assets/januario.jpg" alt="">Januário Gagliardi · JRG Corp</span>
+    </div>
+  </div>
+</section>
+
+<!-- FERRAMENTAS -->
+<section class="tools-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Ferramentas da casa</span>
+      <h2>O que roda aqui dentro, <span class="ed">aberto na sua frente</span></h2>
+      <p>Três produtos que a Artemis vende e usa todo dia. Na imersão, eles servem de molde para montar a sua versão, do tamanho do seu negócio.</p>
+    </div>
+    <div class="tools">
+      <div class="tool t1">
+        <div class="shot"><img src="assets/f/tool-mktops.jpg" alt="Claude rodando skills do MktOps"></div>
+        <div class="bd">
+          <div class="kick">Marketing com IA</div>
+          <h3>MktOps</h3>
+          <p>O sistema com que a Artemis opera marketing: skills e agentes ligados à memória escrita de cada cliente. Copy, arte, e-mail, tráfego e CRM saem dele.</p>
+          <div class="stat"><b>127 skills · 19 agentes</b><span>46 automações rodando</span></div>
+        </div>
+      </div>
+      <div class="tool t2">
+        <div class="shot"><img src="assets/f/tool-seo.jpg" alt="Painel do Google com impressões em respostas de IA"></div>
+        <div class="bd">
+          <div class="kick">Busca e IA</div>
+          <h3>Artemis SEO</h3>
+          <p>Plataforma própria para aparecer no Google e nas respostas de IA do Google e do ChatGPT.</p>
+          <div class="stat"><b>327 → 11.792</b><span>cliques no site do Tallisson</span></div>
+        </div>
+      </div>
+      <div class="tool t3">
+        <div class="shot"><img src="assets/f/tool-studio.jpg" alt="Willy na fábrica da Gascat"></div>
+        <div class="bd">
+          <div class="kick">IA para indústria</div>
+          <h3>Studio Artemis</h3>
+          <p>Sistemas de IA para indústria e operação, com laboratório de teste embutido.</p>
+          <div class="stat"><b>Athie e Gascat</b><span>saíram daqui</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIME -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">O time</span>
+      <h2>Quatro áreas <span class="ed">na mesma sala</span></h2>
+    </div>
+    <div class="team">
+      <div class="member"><img src="assets/f/helio.jpg" alt="Hélio Costa Jr."><div class="area">Marketing e copy</div><h3>Hélio Costa Jr.</h3><p>Sócio-diretor. Campanhas que somam mais de R$ 100 milhões em vendas. Foi head de marketing e primeiro contratado do Viver de IA.</p></div>
+      <div class="member"><img src="assets/f/enzo.jpg" alt="Enzo Campos"><div class="area">Vendas</div><h3>Enzo Campos</h3><p>Sócio e diretor comercial. Lidera o comercial das três linhas do grupo, do funil ao fechamento.</p></div>
+      <div class="member"><img src="assets/f/willy.jpg" alt="Willy Azevedo"><div class="area">IA para indústria</div><h3>Willy Azevedo</h3><p>Sócio e engenheiro de produção. Conduziu os sistemas da Athie e da Gascat, do chão de fábrica ao código em produção.</p></div>
+      <div class="member"><img src="assets/f/julio.jpg" alt="Julio Lossavaro"><div class="area">Programação</div><h3>Julio Lossavaro</h3><p>Sócio e CTO. Responsável pela plataforma e pelos agentes próprios da Artemis.</p></div>
+    </div>
+    <div class="team-note">
+      <img src="assets/f/socios.jpg" alt="Os quatro sócios da Artemis">
+      <div>
+        <p>Marketing, venda, indústria e código raramente estão na mesma mesa. Aqui os quatro trabalham juntos todo dia.</p>
+        <small>No dia da sua imersão, os quatro estão disponíveis.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ONDE -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="where">
+      <div class="txt">
+        <span class="tag">Onde</span>
+        <h2>Beira-mar do Estreito, Florianópolis</h2>
+        <p>O escritório fica de frente para o mar, no mesmo prédio da Marine Telematics.</p>
+        <ul>
+          <li>Almoço incluso</li>
+          <li>Sala de reunião com quadros, só para você</li>
+          <li>Se você vem de outro estado, indicamos onde ficar</li>
+        </ul>
+      </div>
+      <div class="pics">
+        <img src="assets/f/vista.jpg" alt="Mesa de trabalho com vista para o mar">
+        <img src="assets/f/janela.jpg" alt="Integrante do time na janela do escritório">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CRITÉRIOS -->
+<section style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Critérios</span>
+      <h2>Quem recebe a vaga</h2>
+    </div>
+    <div class="crit">
+      <div class="crit-box yes">
+        <h3>A vaga é liberada para quem</h3>
+        <ul>
+          <li>É dono, sócio ou gestor com autonomia para mudar como a área trabalha</li>
+          <li>Chega com um problema concreto: um processo, uma meta de venda, um canal que não funciona</li>
+          <li>Pode trazer material real da empresa: proposta, planilha, pedido, conversa de cliente</li>
+          <li>Pode vir a Florianópolis numa das datas do mês</li>
+        </ul>
+      </div>
+      <div class="crit-box no">
+        <h3>A vaga não é liberada quando</h3>
+        <ul>
+          <li>O objetivo é conhecer IA de forma geral, sem problema definido</li>
+          <li>A necessidade está fora do que o time faz. Nesse caso, a gente avisa</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section class="offer" id="oferta">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Investimento</span>
+      <h2>Duas datas por mês, uma empresa por dia</h2>
+      <p>No dia da imersão, o time sai da operação dos clientes para ficar com você. Cada data recebe uma pessoa ou uma empresa, e ninguém mais. O que for mostrado na sala fica na sala: assinamos acordo de confidencialidade se a sua empresa pedir.</p>
+    </div>
+    <div class="scarcity">
+      <div class="dots" id="dots"></div>
+      <div class="txt" id="vagas-txt"></div>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <div class="pn">Individual</div>
+        <h3>Uma pessoa</h3>
+        <div class="whop">Para o dono, sócio ou gestor</div>
+        <div class="price">R$ 7.500</div>
+        <div class="inst">ou em até 【N】x no cartão</div>
+        <ul>
+          <li>6 horas presenciais com o time</li>
+          <li>Almoço incluso</li>
+          <li>O que for construído, instalado no seu computador</li>
+          <li>Plano de 30 dias por escrito</li>
+          <li>30 dias de WhatsApp com o time</li>
+        </ul>
+        <a class="btn line" href="#requisicao" data-formato="Individual">Requisitar vaga individual</a>
+      </div>
+      <div class="plan hl">
+        <div class="pn">Empresa</div>
+        <h3>Até 4 pessoas do mesmo time</h3>
+        <div class="whop">O dia gira em torno de um processo da empresa</div>
+        <div class="price">R$ 15.000</div>
+        <div class="inst">abatido do projeto se houver continuidade em até 60 dias</div>
+        <ul>
+          <li>Tudo do formato individual, para até 4 pessoas</li>
+          <li>Mapa por escrito do que dá para automatizar</li>
+          <li>Estimativa de custo e de economia por processo</li>
+          <li>Valor abatido de um projeto de implementação da Artemis</li>
+        </ul>
+        <a class="btn" href="#requisicao" data-formato="Empresa">Requisitar vaga para empresa</a>
+      </div>
+    </div>
+    <p class="fine">Nenhum pagamento agora. O pagamento só acontece depois que a vaga é liberada.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="tag">Perguntas</span><h2>Antes de preencher</h2></div>
+    <div class="faq">
+      <details><summary>Preciso saber programar?</summary><p>Não. O Julio está na sala para a parte que exige código.</p></details>
+      <details><summary>O que eu levo no dia?</summary><p>Seu notebook e o material da empresa que você indicou na requisição. Mandamos antes a lista do que instalar.</p></details>
+      <details><summary>Os dados da minha empresa ficam com vocês?</summary><p>Não. O que for construído fica no seu computador e nas suas contas. Se a empresa exigir, assinamos acordo de confidencialidade antes da data.</p></details>
+      <details><summary>E depois da imersão?</summary><p>Durante 30 dias o time responde no WhatsApp. Se quiser continuar, a Artemis tem programas de acompanhamento e projetos de implementação.</p></details>
+      <details><summary>Posso remarcar?</summary><p>Uma vez, com pelo menos 7 dias de antecedência.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- REQUISIÇÃO -->
+<section class="form-sec" id="requisicao">
+  <div class="wrap">
+    <div class="form-grid">
+      <div class="form-side">
+        <span class="tag">Requisição</span>
+        <h2 style="margin-top:14px">Preencha a requisição</h2>
+        <p>A gente lê cada uma. Em até 2 dias úteis você recebe a resposta pelo WhatsApp: vaga liberada com as datas disponíveis, ou o motivo de não ser a hora.</p>
+        <div class="mini">
+          <div><b>1</b>Você envia a requisição (uns 5 minutos)</div>
+          <div><b>2</b>O time avalia contra os critérios</div>
+          <div><b>3</b>Vaga liberada: você escolhe a data e o dia é montado</div>
+        </div>
+        <img src="assets/f/acao1.jpg" alt="Time da Artemis em dia de trabalho">
+      </div>
+
+      <form id="form" novalidate>
+        <div class="row">
+          <div class="field"><label for="nome">Nome</label><input id="nome" name="nome" autocomplete="name" required><div class="msg">Informe seu nome.</div></div>
+          <div class="field"><label for="whatsapp">WhatsApp</label><input id="whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(48) 99999-9999" required><div class="msg">Informe um WhatsApp com DDD.</div></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required><div class="msg">Informe um e-mail válido.</div></div>
+          <div class="field"><label for="empresa">Empresa e cargo</label><input id="empresa" name="empresa" placeholder="Ex.: Gascat, diretor" required><div class="msg">Informe empresa e cargo.</div></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="site">Site <small>(opcional)</small></label><input id="site" name="site" inputmode="url" placeholder="suaempresa.com.br"></div>
+          <div class="field"><label for="faturamento">Faturamento anual</label>
+            <select id="faturamento" name="faturamento" required>
+              <option value="">Selecione</option><option>Até R$ 1 mi</option><option>R$ 1–10 mi</option><option>R$ 10–50 mi</option><option>Acima de R$ 50 mi</option>
+            </select><div class="msg">Selecione uma faixa.</div></div>
+        </div>
+        <div class="field" data-group="formato"><span class="lab">Formato</span>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="formato" value="Individual"><span><b>Individual</b>uma pessoa</span></label>
+            <label class="opt"><input type="radio" name="formato" value="Empresa"><span><b>Empresa</b>até 4 pessoas</span></label>
+          </div><div class="msg">Escolha o formato.</div></div>
+        <div class="field" data-group="area"><span class="lab">Qual área mais precisa de ajuda</span>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="area" value="Marketing e conteúdo"><span>Marketing e conteúdo</span></label>
+            <label class="opt"><input type="radio" name="area" value="Vendas"><span>Vendas</span></label>
+            <label class="opt"><input type="radio" name="area" value="Processos e automação"><span>Processos e automação</span></label>
+            <label class="opt"><input type="radio" name="area" value="Indústria e operação"><span>Indústria e operação</span></label>
+            <label class="opt"><input type="radio" name="area" value="SEO e presença em IA"><span>SEO e presença em IA</span></label>
+          </div><div class="msg">Escolha uma área.</div></div>
+        <div class="field"><label for="problema">O problema que você quer resolver no dia</label><textarea id="problema" name="problema" placeholder="Ex.: nossa proposta comercial leva 3 dias para sair e depende de uma pessoa só." required></textarea><div class="msg">Conte o problema em uma ou duas frases.</div></div>
+        <div class="field"><label for="tentou">O que você já tentou com IA até hoje? <small>(opcional)</small></label><textarea id="tentou" name="tentou" style="min-height:70px"></textarea></div>
+        <button class="btn" type="submit" id="enviar">Enviar requisição <span class="arr">→</span></button>
+        <p class="fine">Nenhum pagamento agora.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/artemis-lockup-dark.svg" alt="Artemis">
+    <span>Artemis · Beira-mar do Estreito, Florianópolis/SC</span>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <span><b>Imersão particular de IA</b><span data-vagas-sticky>2 vagas por mês</span></span>
+  <a class="btn" href="#requisicao">Requisitar vaga</a>
+</div>
+
+<script>
+var CONFIG = {
+  webhook: "",                 // endpoint do meta-hub (IngestSource) — preencher antes de publicar
+  redirect: "obrigado.html",
+  vagasMes: 2,
+  vagasPreenchidas: 1          // atualizar a cada vaga fechada
+};
+
+/* contador de vagas */
+(function(){
+  var meses=["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
+  var mes=meses[new Date().getMonth()];
+  var livres=Math.max(CONFIG.vagasMes-CONFIG.vagasPreenchidas,0);
+  var dots=document.getElementById("dots");
+  for(var i=0;i<CONFIG.vagasMes;i++){var d=document.createElement("div");d.className="dot"+(i<CONFIG.vagasPreenchidas?" taken":"");d.textContent=i<CONFIG.vagasPreenchidas?"✓":(i+1);dots.appendChild(d);}
+  document.getElementById("vagas-txt").innerHTML=livres===0?"<b>Vagas de "+mes+" preenchidas.</b> Requisições novas entram para o mês seguinte.":"<b>"+livres+" de "+CONFIG.vagasMes+" vagas livres em "+mes+".</b> Requisições avaliadas por ordem de chegada.";
+  var curto=livres===0?"Vagas de "+mes+" preenchidas":livres+" de "+CONFIG.vagasMes+" vagas livres em "+mes;
+  document.querySelectorAll("[data-vagas-mini],[data-vagas-sticky]").forEach(function(el){el.textContent=curto;});
+  var h=document.querySelector("[data-vagas-hero]"); if(h) h.textContent=curto+". Liberadas para quem atende aos critérios.";
+})();
+
+/* botões de plano pré-selecionam o formato */
+document.querySelectorAll("[data-formato]").forEach(function(a){
+  a.addEventListener("click",function(){var r=document.querySelector('input[name="formato"][value="'+a.dataset.formato+'"]'); if(r) r.checked=true;});
+});
+
+/* barra fixa no mobile: aparece depois do hero, some no formulário */
+(function(){
+  var s=document.getElementById("sticky"), hero=document.querySelector(".hero"), form=document.getElementById("requisicao");
+  function upd(){var y=window.scrollY, hb=hero.offsetTop+hero.offsetHeight, ft=form.offsetTop-window.innerHeight*.6; s.classList.toggle("on", y>hb && y<ft);}
+  window.addEventListener("scroll",upd,{passive:true}); upd();
+})();
+
+/* formulário — Regra 6 */
+(function(){
+  var form=document.getElementById("form");
+  function setErr(el,on){ el.closest(".field").classList.toggle("err",on); }
+  function valida(){
+    var ok=true, f=form.elements;
+    [["nome",function(v){return v.trim().length>1}],
+     ["whatsapp",function(v){return v.replace(/\D/g,"").length>=10}],
+     ["email",function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())}],
+     ["empresa",function(v){return v.trim().length>1}],
+     ["faturamento",function(v){return !!v}],
+     ["problema",function(v){return v.trim().length>5}]
+    ].forEach(function(p){var el=f[p[0]], bom=p[1](el.value); setErr(el,!bom); if(!bom&&ok){ok=false; el.focus();}});
+    ["formato","area"].forEach(function(g){var bom=!!form.querySelector('input[name="'+g+'"]:checked'); form.querySelector('[data-group="'+g+'"]').classList.toggle("err",!bom); if(!bom) ok=false;});
+    return ok;
+  }
+  form.addEventListener("input",function(e){var fl=e.target.closest(".field"); if(fl) fl.classList.remove("err");});
+  form.addEventListener("change",function(e){var fl=e.target.closest(".field"); if(fl) fl.classList.remove("err");});
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    if(!valida()) return;
+    var btn=document.getElementById("enviar"); btn.disabled=true; btn.textContent="Enviando…";
+    var qs=new URLSearchParams(location.search);
+    var payload={};
+    new FormData(form).forEach(function(v,k){payload[k]=v;});
+    ["utm_source","utm_medium","utm_campaign","utm_content","utm_term"].forEach(function(k){payload[k]=qs.get(k)||"";});
+    payload.form_id="lp-imersao-particular"; payload.pagina=location.pathname;
+
+    if(CONFIG.webhook){
+      try{ fetch(CONFIG.webhook,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload),keepalive:true}).catch(function(){}); }catch(err){}
+    }
+
+    var redirecionou=false;
+    function go(){ if(redirecionou) return; redirecionou=true; location.href=CONFIG.redirect+(location.search||""); }
+    window.dataLayer=window.dataLayer||[];
+    window.dataLayer.push({
+      event:"lead_gerado",
+      form_id:"lp-imersao-particular",
+      pagina:location.pathname,
+      utm_source:payload.utm_source||"",
+      utm_medium:payload.utm_medium||"",
+      utm_campaign:payload.utm_campaign||"",
+      eventCallback:go,
+      eventTimeout:1500
+    });
+    setTimeout(go,1800);
+  });
+})();
+</script>
+</body>
+</html>

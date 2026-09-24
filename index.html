@@ -798,6 +798,7 @@ footer img{height:24px}
           </div><div class="msg">Escolha uma área.</div></div>
         <div class="field"><label for="problema">O problema que você quer resolver no dia</label><textarea id="problema" name="problema" placeholder="Ex.: nossa proposta comercial leva 3 dias para sair e depende de uma pessoa só." required></textarea><div class="msg">Conte o problema em uma ou duas frases.</div></div>
         <div class="field"><label for="tentou">O que você já tentou com IA até hoje? <small>(opcional)</small></label><textarea id="tentou" name="tentou" style="min-height:70px"></textarea></div>
+        <div style="position:absolute;left:-9999px" aria-hidden="true"><input type="text" name="empresa_site" tabindex="-1" autocomplete="off"></div>
         <button class="btn" type="submit" id="enviar">Enviar requisição <span class="arr">→</span></button>
         <p class="fine">Nenhum pagamento agora.</p>
       </form>
@@ -821,7 +822,7 @@ footer img{height:24px}
 
 <script>
 var CONFIG = {
-  webhook: "",                 // endpoint do meta-hub (IngestSource) — preencher antes de publicar
+  webhook: "https://n8n.studioartemis.co/webhook/imersao-particular-lead",  // n8n → meta-hub (fonte lp-imersao-particular) → Kommo Mkt Ops
   redirect: "obrigado.html",
   vagasMes: 2,
   vagasPreenchidas: 1          // atualizar a cada vaga fechada
@@ -878,10 +879,10 @@ document.querySelectorAll("[data-formato]").forEach(function(a){
     var payload={};
     new FormData(form).forEach(function(v,k){payload[k]=v;});
     ["utm_source","utm_medium","utm_campaign","utm_content","utm_term"].forEach(function(k){payload[k]=qs.get(k)||"";});
-    payload.form_id="lp-imersao-particular"; payload.pagina=location.pathname;
+    payload.form_id="lp-imersao-particular"; payload.pagina=location.pathname; payload.url=location.href; payload.t=Math.round(performance.now());
 
     if(CONFIG.webhook){
-      try{ fetch(CONFIG.webhook,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload),keepalive:true}).catch(function(){}); }catch(err){}
+      try{ fetch(CONFIG.webhook,{method:"POST",mode:"no-cors",keepalive:true,headers:{"Content-Type":"text/plain;charset=UTF-8"},body:JSON.stringify(payload)}).catch(function(){}); }catch(err){}
     }
 
     var redirecionou=false;

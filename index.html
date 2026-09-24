@@ -175,6 +175,37 @@ section{padding:110px 0}
 .quote .who-q{display:flex;align-items:center;gap:14px;margin-top:auto;padding-top:24px;font-size:14px;line-height:1.35;color:var(--muted)}
 .quote .who-q img{width:48px;height:48px;border-radius:50%;object-fit:cover;flex:none}
 .quote .who-q b{display:block;color:var(--ink);font-size:15px}
+/* cardápio */
+.menu-sec{background:var(--stone)}
+.ctx{background:var(--dark);color:#CFCBC6;border-radius:var(--r);padding:40px 42px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.ctx .kick{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--wood-soft)}
+.ctx h3{color:#fff;font-size:clamp(26px,2.6vw,34px);line-height:1.12;margin-top:10px}
+.ctx p{margin-top:14px;font-size:16.5px;line-height:1.55}
+.ctx p b{color:#fff}
+.conn{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.conn span{border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:14px 16px;font-size:15px;line-height:1.3;color:#E4E0DA}
+.conn span b{display:block;color:#fff;font-family:var(--display);font-weight:600;font-size:16px}
+.conn .all{grid-column:span 2;background:#fff;color:var(--text);border-color:#fff}
+.conn .all b{color:var(--ink)}
+.menu{width:100%;margin-top:22px;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.menu th{text-align:left;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:18px 24px;border-bottom:1px solid var(--line);background:#FBFAF8}
+.menu td{padding:22px 24px;vertical-align:top;border-bottom:1px solid var(--line);font-size:15.5px;line-height:1.5}
+.menu tr:last-child td{border-bottom:0}
+.menu td:first-child{font-family:var(--display);font-weight:700;color:var(--ink);font-size:18px;width:19%}
+.menu td:nth-child(2) ul{list-style:none;display:grid;gap:6px}
+.menu td:nth-child(2) li{padding-left:18px;position:relative}
+.menu td:nth-child(2) li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:2px;background:var(--wood-soft)}
+.menu td:last-child{width:27%;color:var(--muted)}
+.menu td:last-child b{color:var(--ink);font-weight:600}
+.menu tr.base td{background:#FBF8F3}
+.limit{margin-top:22px;border:1px solid var(--line);background:#fff;border-radius:var(--r);padding:32px 36px;display:grid;grid-template-columns:.8fr 1.6fr;gap:32px}
+.limit h3{font-size:24px}
+.limit p{font-size:16.5px}
+.limit p+p{margin-top:12px}
+.limit .fmt{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.limit .fmt div{background:var(--stone);border-radius:12px;padding:14px 16px;font-size:14.5px;line-height:1.35}
+.limit .fmt b{display:block;color:var(--ink);font-family:var(--display);font-size:16px}
+
 .also{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:15px}
 .also .lbl{color:var(--muted);margin-right:4px}
 .chip{border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-weight:600;color:var(--ink);display:inline-flex;align-items:center;gap:8px}
@@ -324,6 +355,7 @@ footer img{height:24px}
   .who div:nth-child(3){padding-left:0;border-left:0}
   .who div:nth-child(-n+2){border-bottom:1px solid var(--line)}
   .take ul{grid-template-columns:1fr}
+  .ctx,.limit{grid-template-columns:1fr;gap:26px}
   .team{grid-template-columns:1fr 1fr}
   .gal{grid-template-columns:1fr 1fr;grid-template-rows:220px 180px 180px}
   .gal .g1{grid-column:span 2;grid-row:auto}
@@ -346,6 +378,18 @@ footer img{height:24px}
   .fact .v{font-size:18px}
   .logo-row{gap:22px 34px}
   .quote{padding:26px 22px 22px}
+  .ctx{padding:28px 22px}
+  .conn{grid-template-columns:1fr}
+  .conn .all{grid-column:auto}
+  .limit{padding:26px 22px}
+  .limit .fmt{grid-template-columns:1fr}
+  .menu thead{display:none}
+  .menu,.menu tbody,.menu tr,.menu td{display:block;width:auto!important}
+  .menu td{border-bottom:0;padding:6px 20px}
+  .menu td:first-child{padding-top:22px}
+  .menu td:last-child{padding-bottom:22px;border-bottom:1px solid var(--line)}
+  .menu tr:last-child td:last-child{border-bottom:0}
+  .menu td:last-child::before{content:"Já feito com: ";font-weight:700;color:var(--ink)}
   .quote blockquote{font-size:21px}
   .logo-row img{height:24px}
   .logo-row .tall{height:32px}
@@ -499,6 +543,64 @@ footer img{height:24px}
         <li><b>Um plano por escrito</b> para os 30 dias seguintes</li>
         <li><b>30 dias de WhatsApp</b> com o time para destravar o que emperrar</li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CARDÁPIO -->
+<section class="menu-sec" id="cardapio">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Cardápio</span>
+      <h2>O que dá para montar, <span class="ed">área por área</span></h2>
+      <p>Tudo nesta tabela já rodou dentro de alguma empresa. A coluna da direita mostra onde. Você escolhe por onde começar, e o time confirma o que cabe no seu dia.</p>
+    </div>
+
+    <div class="ctx">
+      <div>
+        <div class="kick">Entra em toda imersão</div>
+        <h3>Antes de qualquer automação, o contexto da sua empresa</h3>
+        <p>A IA decide tão bem quanto o que ela sabe do seu negócio. Por isso o dia começa organizando essa memória por escrito: clientes, produtos, preços, processos, regras e o jeito de a empresa falar.</p>
+        <p>Depois a IA é ligada aos sistemas onde os seus dados já estão. <b>Ela lê e escreve direto no CRM, no ERP, no e-mail e nas planilhas</b>, e cada sistema passa a conversar com os outros.</p>
+      </div>
+      <div class="conn">
+        <span><b>CRM</b>leads, funil e histórico de cada cliente</span>
+        <span><b>ERP</b>estoque, pedidos, produção e financeiro</span>
+        <span><b>E-mail e WhatsApp</b>réguas, disparos e atendimento</span>
+        <span><b>Anúncios</b>Meta Ads, Google e Search Console</span>
+        <span><b>Planilhas e Drive</b>o que hoje vive em arquivo solto</span>
+        <span><b>Site e formulários</b>lead entrando direto no CRM</span>
+        <span class="all"><b>Resultado: uma operação integrada</b>O lead que chega pelo site entra no CRM, recebe o e-mail certo e aparece no relatório, sem ninguém copiar dado de um lugar para o outro.</span>
+      </div>
+    </div>
+
+    <table class="menu">
+      <thead><tr><th>Área</th><th>O que dá para montar</th><th>Já feito com</th></tr></thead>
+      <tbody>
+        <tr class="base"><td>Contexto e integração</td><td><ul><li>Memória escrita do negócio, que a IA consulta antes de cada tarefa</li><li>Conectores com CRM, ERP, e-mail, WhatsApp, anúncios e planilhas</li></ul></td><td>Todos os clientes. <b>É a base do dia.</b></td></tr>
+        <tr><td>Marketing</td><td><ul><li>Anúncio, carrossel, roteiro e vídeo produzidos com IA</li><li>Automação de e-mail marketing: boas-vindas, nutrição e reativação</li><li>Blog com artigos escritos por IA e revisados por especialista</li><li>Presença nas respostas de IA do Google e do ChatGPT</li></ul></td><td><b>Marine Telematics</b> (174 artigos em 27 dias), <b>Souza Advogados</b>, <b>JRG Corp</b></td></tr>
+        <tr><td>Site e captação</td><td><ul><li>Página de captura e página de vendas</li><li>Formulário que cai direto no CRM, com a origem do lead</li><li>IA dentro do site: calculadora, diagnóstico automático, atendimento</li></ul></td><td><b>Souza Advogados</b> (327 → 11.792 cliques), a própria Artemis</td></tr>
+        <tr><td>Vendas e CRM</td><td><ul><li>CRM montado e ligado ao site, aos anúncios e ao WhatsApp</li><li>Lead qualificado por IA assim que entra</li><li>Distribuição de leads entre vendedores e cadência de follow-up</li><li>Análise das calls de venda: objeções, pontos de perda, linguagem do cliente</li></ul></td><td><b>JRG Corp</b>, operação comercial da <b>Artemis</b></td></tr>
+        <tr><td>Financeiro</td><td><ul><li>Controle de gasto e de custo por item, por linha ou por contrato</li><li>Conferência de folha, olerite e cartão de ponto</li><li>Relatório financeiro que se monta sozinho</li></ul></td><td><b>Plus IoT</b> (chips M2M), <b>Athie Wohnrath</b> (R$ 40 mil por mês)</td></tr>
+        <tr><td>Administrativo e RH</td><td><ul><li>Validação de documento contra regra</li><li>Conferência da documentação de terceirizados</li><li>Triagem de e-mail, pedido e solicitação interna</li></ul></td><td><b>Athie Wohnrath</b></td></tr>
+        <tr><td>Operação e produção</td><td><ul><li>Sistema próprio de estoque, produção e expedição</li><li>Codificação de produto por parâmetro técnico</li><li>Levantamento de quantitativo em planta</li><li>Roteirização e montagem de carga</li></ul></td><td><b>Marine Telematics</b>, <b>Gascat</b> (70% em 1 dia), <b>Athie</b> (3 h → 25 min), multinacional de alimentos</td></tr>
+      </tbody>
+    </table>
+
+    <div class="limit">
+      <div>
+        <span class="tag">Por que existe a pré-seleção</span>
+        <h3 style="margin-top:10px">Um dia não comporta a tabela inteira</h3>
+      </div>
+      <div>
+        <p>Seis horas dão conta do contexto organizado e de uma ou duas frentes funcionando. Um CRM integrado ou um ERP completo não saem prontos em um dia: sai a primeira versão rodando e o plano por escrito para o resto.</p>
+        <p>Por isso a requisição vem antes do pagamento. Com ela, o time escolhe com você o que entra no dia e qual formato serve. Você só fecha depois disso.</p>
+        <div class="fmt">
+          <div><b>Individual</b>uma frente, para quem decide sozinho</div>
+          <div><b>Empresa</b>um processo, com até 4 pessoas do time</div>
+          <div><b>Enterprise</b>um departamento inteiro, até 20 pessoas</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

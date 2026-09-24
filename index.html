@@ -168,6 +168,13 @@ section{padding:110px 0}
 .case .person{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:20px;font-size:14px;line-height:1.35}
 .case .person img{width:42px;height:42px;border-radius:50%;object-fit:cover}
 .case .person b{display:block;color:var(--ink)}
+/* depoimentos */
+.quotes{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.quote{background:var(--stone);border-radius:var(--r);padding:32px 34px 28px;display:flex;flex-direction:column}
+.quote blockquote{font-family:var(--serif);font-style:italic;font-size:24px;line-height:1.3;color:var(--ink)}
+.quote .who-q{display:flex;align-items:center;gap:14px;margin-top:auto;padding-top:24px;font-size:14px;line-height:1.35;color:var(--muted)}
+.quote .who-q img{width:48px;height:48px;border-radius:50%;object-fit:cover;flex:none}
+.quote .who-q b{display:block;color:var(--ink);font-size:15px}
 .also{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:15px}
 .also .lbl{color:var(--muted);margin-right:4px}
 .chip{border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-weight:600;color:var(--ink);display:inline-flex;align-items:center;gap:8px}
@@ -309,7 +316,7 @@ footer img{height:24px}
   .facts{grid-template-columns:1fr 1fr}
   .fact:nth-child(3){padding-left:0;border-left:0}
   .fact:nth-child(-n+2){border-bottom:1px solid var(--line)}
-  .steps,.cases,.day,.plans,.crit{grid-template-columns:1fr}
+  .steps,.cases,.quotes,.day,.plans,.crit{grid-template-columns:1fr}
   .tools{grid-template-columns:1fr}
   .tool.t1{grid-row:auto}
   .who{grid-template-columns:1fr 1fr}
@@ -337,6 +344,8 @@ footer img{height:24px}
   .fact+.fact{padding-left:14px}
   .fact .v{font-size:18px}
   .logo-row{gap:22px 34px}
+  .quote{padding:26px 22px 22px}
+  .quote blockquote{font-size:21px}
   .logo-row img{height:24px}
   .logo-row .tall{height:32px}
   .mosaic{grid-template-columns:1fr 1fr}
@@ -414,6 +423,8 @@ footer img{height:24px}
       <img src="assets/logos/marine.svg" alt="Marine Telematics">
       <img src="assets/logos/plusiot-dark.png" alt="Plus IoT">
       <img src="assets/logos/next-dark.png" alt="Next Shipping" class="tall">
+      <img src="assets/logos/jrg.png" alt="JRG Corp">
+      <img src="assets/logos/propspeed.png" alt="Propspeed" class="tall">
       <span class="plug"><img src="assets/logos/plugue-dark.png" alt="">Plugue</span>
     </div>
   </div>
@@ -555,11 +566,11 @@ footer img{height:24px}
           <div class="big">327 → 11.792</div>
           <div class="bl">cliques orgânicos no Google</div>
           <p>Escritório no interior de Minas, com 5 mil processos. O site passou a aparecer em 258 mil respostas de IA do Google.</p>
-          <div class="person"><span><b>Tallisson Souza</b>Souza Advogados</span></div>
+          <div class="person"><img src="assets/f/tallisson.jpg" alt="Tallisson Souza"><span><b>Tallisson Souza</b>Souza Advogados</span></div>
         </div>
       </article>
       <article class="case">
-        <div class="ph"><img src="assets/f/case-marine.jpg" alt="Comando eletrônico da Marine Telematics" style="object-position:center 45%"><div class="lg"><img src="assets/logos/marine.svg" alt="Marine Telematics"></div></div>
+        <div class="ph"><img src="assets/f/case-marine.jpg" alt="Embarcação com comando Marine Telematics atracada em Florianópolis"></div>
         <div class="bd">
           <div class="seg">Fábrica de tecnologia náutica</div>
           <div class="big">R$ 42 mil<small> sem anúncio</small></div>
@@ -571,8 +582,35 @@ footer img{height:24px}
     </div>
     <div class="also">
       <span class="lbl">Também confiam no time:</span>
-      <span class="chip">Orsegups</span><span class="chip">Plus IoT</span><span class="chip">Next Shipping</span><span class="chip">Plugue</span>
-      <span class="chip"><img src="assets/januario.jpg" alt="">Januário Gagliardi · JRG Corp</span>
+      <span class="chip">Orsegups</span><span class="chip">Plus IoT</span><span class="chip">Next Shipping</span><span class="chip">JRG Corp</span><span class="chip">Propspeed</span><span class="chip">Plugue</span>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Quem já usa</span>
+      <h2>O que os clientes dizem</h2>
+    </div>
+    <div class="quotes">
+      <figure class="quote">
+        <blockquote>“Tratei a IA como trato qualquer investimento: quanto custa, quanto devolve e em quanto tempo. Passou na conta. Hoje o marketing inteiro da JRG roda com IA, e o comercial também.”</blockquote>
+        <figcaption class="who-q"><img src="assets/f/januario.jpg" alt="Januário Gagliardi"><span><b>Januário Gagliardi</b>Fundador da JRG Corp, distribuidora da Propspeed na América Latina</span></figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>“Criamos um sistema interno que controla estoque, produção e expedição de todos os produtos da Marine. Com desenvolvedor, eu teria gastado tranquilamente mais de R$ 100 mil e ainda não teria terminado.”</blockquote>
+        <figcaption class="who-q"><img src="assets/f/jairo.jpg" alt="Jairo de Abreu"><span><b>Jairo de Abreu</b>Fundador e CEO da Marine Telematics</span></figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>“Automatizamos o controle de gasto dos chips M2M de conectividade. O consumo de cada linha, o custo e a conferência do financeiro passaram a sair de um sistema só.”</blockquote>
+        <figcaption class="who-q"><img src="assets/f/joceni.jpg" alt="Joceni Fortkamp"><span><b>Joceni Fortkamp</b>CFO da Plus IoT</span></figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>“Hoje eu faço os anúncios e edito os vídeos do escritório no meu próprio computador. O site, que tinha 327 cliques no Google, passou de 11 mil.”</blockquote>
+        <figcaption class="who-q"><img src="assets/f/tallisson.jpg" alt="Tallisson Souza"><span><b>Tallisson Souza</b>Souza Advogados</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
